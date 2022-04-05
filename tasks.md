@@ -4,13 +4,13 @@
 
 
 #### Tasks
-- [[1-0001: Fork and setting git]](https://github.com/AzarenkaA/vote-v2/blob/tasks/tasks.md#task1-0001-fork-and-setting-git)
-- [[1-0002: Create infrastructure for project]](https://github.com/AzarenkaA/vote-v2/blob/tasks/tasks.md#task1-0002-create-infrastructure-for-project)
-- [[1-0003: Create infrastructure for database and create db for the project]](https://github.com/AzarenkaA/vote-v2/blob/tasks/tasks.md#task1-0003-create-infrastructure-for-database-and-create-db-for-the-project)
-- [[1-0004: Create REST to get list of all restaurants]](https://github.com/AzarenkaA/vote-v2/blob/tasks/tasks.md#task1-0004-create-rest-to-get-list-of-all-restaurants)
-- [[1-0005: Create REST to get menu of restaurant]](https://github.com/AzarenkaA/vote-v2/blob/tasks/tasks.md#task1-0005-create-rest-to-get-menu-of-restaurant)
-- [[1-0006: Create REST to add new restaurant]](https://github.com/AzarenkaA/vote-v2/blob/tasks/tasks.md#task1-0006-create-rest-to-add-new-restaurant)
-- [[1-0007: Create REST to add menu to restaurant]](https://github.com/AzarenkaA/vote-v2/blob/tasks/tasks.md#task1-0007-create-rest-to-add-menu-to-restaurant)
+- [[1-0001: Fork and setting git]](https://github.com/AzarenkaA/vote-v2/blob/master/tasks.md#task1-0001-fork-and-setting-git)
+- [[1-0002: Create infrastructure for project]](https://github.com/AzarenkaA/vote-v2/blob/master/tasks.md#task1-0002-create-infrastructure-for-project)
+- [[1-0003: Create infrastructure for database and create db for the project]](https://github.com/AzarenkaA/vote-v2/blob/master/tasks.md#task1-0003-create-infrastructure-for-database-and-create-db-for-the-project)
+- [[1-0004: Create REST to get list of all restaurants]](https://github.com/AzarenkaA/vote-v2/blob/master/tasks.md#task1-0004-create-rest-to-get-list-of-all-restaurants)
+- [[1-0005: Create REST to get menu of restaurant]](https://github.com/AzarenkaA/vote-v2/blob/master/tasks.md#task1-0005-create-rest-to-get-menu-of-restaurant)
+- [[1-0006: Create REST to add new restaurant]](https://github.com/AzarenkaA/vote-v2/blob/master/tasks.md#task1-0006-create-rest-to-add-new-restaurant)
+- [[1-0007: Create REST to add menu to restaurant]](https://github.com/AzarenkaA/vote-v2/blob/master/tasks.md#task1-0007-create-rest-to-add-menu-to-restaurant)
 
 
 ##### Task[1-0001: Fork and setting git]
