@@ -1,6 +1,6 @@
 ### Developing vote system
 
-- [Tasks](https://github.com/AzarenkaA/vote-v2/blob/tasks/tasks.md#tasks)
+- [Tasks](https://github.com/AzarenkaA/vote-v2/blob/master/tasks.md#tasks)
 
 
 #### Tasks
