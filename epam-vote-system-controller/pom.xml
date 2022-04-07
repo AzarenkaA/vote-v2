@@ -11,6 +11,14 @@
     <packaging>war</packaging>
 
     <artifactId>epam-vote-system-controller</artifactId>
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>
