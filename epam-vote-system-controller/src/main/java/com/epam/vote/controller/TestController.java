@@ -4,7 +4,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * "Shows hello world message"
+ * Shows hello world message.
  *<p/>
  * Copyright (C) 2017 epam.com
  *<p/>
