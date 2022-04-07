@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
  *
  * @author Dzianis Zatsiupa
  */
-
 @RestController
 public class TestController {
 
