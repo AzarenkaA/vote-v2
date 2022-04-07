@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class TestController {
 
-    @RequestMapping("/*")
+    @RequestMapping("/")
     public String helloWorld(){
         return "<h2 style=\"width:100%; padding:50px 0; text-align:center;\">Hello world</h2>";
     }
