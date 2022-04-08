@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <bean name="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="org.postgresql.Driver"/>
+        <property name="url" value="jdbc:postgresql://127.0.0.1:5432/epam"/>
+        <property name="username" value="vote_v2"/>
+        <property name="password" value="password"/>
+    </bean>
+
+
+    <bean name="springliquibase" class="org.liquibase.integration.spring.SpringLiquibase">
+        <property name="dataSource" value="datasource"/>
+        <property name="changeLog" value="classpath:liquibase/changelog.xml"/>
+    </bean>
+
+</beans>

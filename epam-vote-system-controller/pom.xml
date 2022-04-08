@@ -18,6 +18,16 @@
             <artifactId>spring-webmvc</artifactId>
             <version>${spring.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.epam</groupId>
+            <artifactId>epam-vote-system-domain</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.epam</groupId>
+            <artifactId>epam-vote-system-service</artifactId>
+            <version>1.0</version>
+        </dependency>
     </dependencies>
 
     <build>
