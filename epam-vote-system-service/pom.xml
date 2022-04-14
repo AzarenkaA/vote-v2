@@ -15,12 +15,12 @@
         <dependency>
             <groupId>com.epam</groupId>
             <artifactId>epam-vote-system-repository</artifactId>
-            <version>1.0</version>
+            <version>${vote.system.version}</version>
         </dependency>
         <dependency>
             <groupId>com.epam</groupId>
             <artifactId>epam-vote-system-domain</artifactId>
-            <version>1.0</version>
+            <version>${vote.system.version}</version>
         </dependency>
     </dependencies>
 

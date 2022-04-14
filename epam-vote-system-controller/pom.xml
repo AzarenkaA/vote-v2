@@ -19,14 +19,19 @@
             <version>${spring.version}</version>
         </dependency>
         <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
             <groupId>com.epam</groupId>
             <artifactId>epam-vote-system-domain</artifactId>
-            <version>1.0</version>
+            <version>${vote.system.version}</version>
         </dependency>
         <dependency>
             <groupId>com.epam</groupId>
             <artifactId>epam-vote-system-service</artifactId>
-            <version>1.0</version>
+            <version>${vote.system.version}</version>
         </dependency>
     </dependencies>
 
