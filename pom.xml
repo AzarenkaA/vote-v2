@@ -25,6 +25,7 @@
         <checkstyle-version>3.0.0</checkstyle-version>
         <spring.version>5.3.18</spring.version>
         <liquibase.version>4.9.0</liquibase.version>
+        <postgresql.version>42.3.3</postgresql.version>
     </properties>
 
     <build>
