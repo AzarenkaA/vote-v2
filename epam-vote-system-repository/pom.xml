@@ -9,5 +9,18 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.epam</groupId>
+            <artifactId>epam-vote-system-db</artifactId>
+            <version>${vote.system.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.epam</groupId>
+            <artifactId>epam-vote-system-domain</artifactId>
+            <version>${vote.system.version}</version>
+        </dependency>
+    </dependencies>
+
     <artifactId>epam-vote-system-repository</artifactId>
 </project>
