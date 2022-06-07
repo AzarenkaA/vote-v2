@@ -9,11 +9,18 @@ package com.epam.vote.domain;
  *
  * @author Dzianis Zatsiupa
  */
-public class Restaurant extends Domain{
+public class Restaurant extends Domain {
     private String id;
     private String name;
     private String address;
     private Integer places;
+
+    public Restaurant(String id, String name, String address, Integer places) {
+        this.id = id;
+        this.name = name;
+        this.address = address;
+        this.places = places;
+    }
 
     public String getId() {
         return id;

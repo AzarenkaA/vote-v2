@@ -1,5 +1,7 @@
 package com.epam.vote.domain;
 
+import java.math.BigDecimal;
+
 /**
  * Stores meal data.
  *<p/>
@@ -13,6 +15,15 @@ public class Meal extends Domain{
     private String id;
     private String size;
     private String name;
+    private BigDecimal cost;
+
+    public BigDecimal getCost() {
+        return cost;
+    }
+
+    public void setCost(BigDecimal cost) {
+        this.cost = cost;
+    }
 
     public String getId() {
         return id;
