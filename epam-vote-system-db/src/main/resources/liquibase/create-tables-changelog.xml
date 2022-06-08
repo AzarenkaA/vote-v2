@@ -8,5 +8,256 @@
                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
     <changeSet id="1" author="Dzianis Zatsiupa">
+        <createTable tableName="restaurant">
+            <column name="id" type="varchar(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="varchar(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="address" type="varchar(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="places" type="integer">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_user" type="varchar(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="date">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_user" type="varchar(10)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="updated_date" type="date">
+                <constraints nullable="true"/>
+            </column>
+            <column name="record_version" type="integer" defaultValue="1">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+        <createTable tableName="meal">
+            <column name="id" type="varchar(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="size" type="varchar(25)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="name" type="varchar(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_user" type="varchar(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="date">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_user" type="varchar(10)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="updated_date" type="date">
+                <constraints nullable="true"/>
+            </column>
+            <column name="record_version" type="integer" defaultValue="1">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+        <createTable tableName="restaurant_to_meal_map">
+            <column name="meal_id" type="varchar(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="restaurant_id" type="varchar(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="cost" type="decimal">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_user" type="varchar(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="date">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_user" type="varchar(10)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="updated_date" type="date">
+                <constraints nullable="true"/>
+            </column>
+            <column name="record_version" type="integer" defaultValue="1">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="restaurant_to_meal_map"
+                                 baseColumnNames="meal_id"
+                                 constraintName="restaurant_to_meal_map_meal_fk"
+                                 referencedTableName="meal"
+                                 referencedColumnNames="id"/>
+        <addForeignKeyConstraint baseTableName="restaurant_to_meal_map"
+                                 baseColumnNames="restaurant_id"
+                                 constraintName="restaurant_to_meal_map_restaurant_f"
+                                 referencedTableName="restaurant"
+                                 referencedColumnNames="id"/>
+        <!--        <sql>-->
+        <!--            CREATE TABLE meal (-->
+        <!--            id varchar(10) NOT NULL,-->
+        <!--            "size" varchar(20) NOT NULL,-->
+        <!--            "name" varchar(50) NOT NULL,-->
+        <!--            created_user varchar(10) NULL,-->
+        <!--            created_date date NULL,-->
+        <!--            updated_user varchar(10) NULL,-->
+        <!--            updated_date date NULL,-->
+        <!--            record_version int4 NULL,-->
+        <!--            CONSTRAINT meal_pkey PRIMARY KEY (id)-->
+        <!--            );-->
+
+        <!--            CREATE TABLE meal_action (-->
+        <!--            id varchar(10) NOT NULL,-->
+        <!--            "action" varchar(100) NOT NULL,-->
+        <!--            CONSTRAINT meal_action_pkey PRIMARY KEY (id)-->
+        <!--            );-->
+
+        <!--            CREATE TABLE menu_action (-->
+        <!--            id varchar(10) NOT NULL,-->
+        <!--            "action" varchar(100) NOT NULL,-->
+        <!--            CONSTRAINT menu_action_pkey PRIMARY KEY (id)-->
+        <!--            );-->
+
+        <!--            CREATE TABLE restaurant (-->
+        <!--            id varchar(10) NOT NULL,-->
+        <!--            "name" varchar(50) NOT NULL,-->
+        <!--            address varchar(80) NOT NULL,-->
+        <!--            places int4 NOT NULL,-->
+        <!--            created_user varchar(10) NULL,-->
+        <!--            created_date date NULL,-->
+        <!--            updated_user varchar(10) NULL,-->
+        <!--            updated_date date NULL,-->
+        <!--            record_version int4 NULL,-->
+        <!--            CONSTRAINT restaurant_pkey PRIMARY KEY (id)-->
+        <!--            );-->
+
+        <!--            CREATE TABLE restaurant_action (-->
+        <!--            id varchar(10) NOT NULL,-->
+        <!--            "action" varchar(100) NOT NULL,-->
+        <!--            CONSTRAINT restaurant_action_pkey PRIMARY KEY (id)-->
+        <!--            );-->
+
+        <!--            CREATE TABLE user_action (-->
+        <!--            id varchar(10) NOT NULL,-->
+        <!--            "action" varchar(100) NOT NULL,-->
+        <!--            CONSTRAINT user_action_pkey PRIMARY KEY (id)-->
+        <!--            );-->
+
+        <!--            CREATE TABLE user_role (-->
+        <!--            id varchar(10) NOT NULL,-->
+        <!--            "role" varchar(50) NOT NULL,-->
+        <!--            CONSTRAINT user_role_pkey PRIMARY KEY (id),-->
+        <!--            CONSTRAINT user_role_role_key UNIQUE (role)-->
+        <!--            );-->
+
+        <!--            CREATE TABLE vote_action (-->
+        <!--            id varchar(10) NOT NULL,-->
+        <!--            "action" varchar(100) NOT NULL,-->
+        <!--            CONSTRAINT vote_action_pkey PRIMARY KEY (id)-->
+        <!--            );-->
+
+        <!--            CREATE TABLE meal_history (-->
+        <!--            meal_id varchar(10) NOT NULL,-->
+        <!--            meal_data_action_id varchar(10) NOT NULL,-->
+        <!--            "date" date NOT NULL,-->
+        <!--            description varchar(255) NOT NULL,-->
+        <!--            reason varchar(255) NOT NULL,-->
+        <!--            CONSTRAINT meal_data_action_ref FOREIGN KEY (meal_data_action_id) REFERENCES meal_action(id),-->
+        <!--            CONSTRAINT meal_history_ref FOREIGN KEY (meal_id) REFERENCES meal(id)-->
+        <!--            );-->
+
+
+        <!--            CREATE TABLE menu (-->
+        <!--            restaurant_id varchar(10) NOT NULL,-->
+        <!--            meal_id varchar(10) NOT NULL,-->
+        <!--            "cost" numeric NOT NULL,-->
+        <!--            created_user varchar(10) NULL,-->
+        <!--            created_date date NULL,-->
+        <!--            updated_user varchar(10) NULL,-->
+        <!--            updated_date date NULL,-->
+        <!--            record_version int4 NULL,-->
+        <!--            CONSTRAINT menu_pkey PRIMARY KEY (restaurant_id, meal_id),-->
+        <!--            CONSTRAINT menu_meal_ref FOREIGN KEY (meal_id) REFERENCES meal(id),-->
+        <!--            CONSTRAINT menu_restaurant_ref FOREIGN KEY (restaurant_id) REFERENCES restaurant(id)-->
+        <!--            );-->
+
+        <!--            CREATE TABLE menu_history (-->
+        <!--            restaurant_id varchar(10) NOT NULL,-->
+        <!--            meal_id varchar(10) NOT NULL,-->
+        <!--            menu_data_action_id varchar(10) NOT NULL,-->
+        <!--            "date" date NOT NULL,-->
+        <!--            description varchar(255) NOT NULL,-->
+        <!--            reason varchar(255) NOT NULL,-->
+        <!--            CONSTRAINT menu_history_action_ref FOREIGN KEY (menu_data_action_id) REFERENCES menu_action(id),-->
+        <!--            CONSTRAINT menu_history_menu_ref FOREIGN KEY (restaurant_id,meal_id) REFERENCES menu(restaurant_id,meal_id)-->
+        <!--            );-->
+
+        <!--            CREATE TABLE restaurant_history (-->
+        <!--            restaurants_id varchar(10) NOT NULL,-->
+        <!--            restaurant_data_action_id varchar(10) NOT NULL,-->
+        <!--            "date" date NOT NULL,-->
+        <!--            description varchar(255) NOT NULL,-->
+        <!--            reason varchar(255) NOT NULL,-->
+        <!--            CONSTRAINT restaurant_data_action_ref FOREIGN KEY (restaurant_data_action_id) REFERENCES restaurant_action(id),-->
+        <!--            CONSTRAINT restaurant_history_ref FOREIGN KEY (restaurants_id) REFERENCES restaurant(id)-->
+        <!--            );-->
+
+        <!--            CREATE TABLE "user" (-->
+        <!--            id varchar(10) NOT NULL,-->
+        <!--            role_id varchar(10) NOT NULL,-->
+        <!--            "name" varchar(50) NOT NULL,-->
+        <!--            email_address varchar(70) NOT NULL,-->
+        <!--            password_hash varchar(70) NOT NULL,-->
+        <!--            created_user varchar(10) NULL,-->
+        <!--            created_date date NULL,-->
+        <!--            updated_user varchar(10) NULL,-->
+        <!--            updated_date date NULL,-->
+        <!--            record_version int4 NULL,-->
+        <!--            CONSTRAINT user_pkey PRIMARY KEY (id),-->
+        <!--            CONSTRAINT user_role_ref FOREIGN KEY (role_id) REFERENCES user_role(id)-->
+        <!--            );-->
+
+        <!--            CREATE TABLE user_history (-->
+        <!--            user_id varchar(10) NOT NULL,-->
+        <!--            user_data_action_id varchar(10) NOT NULL,-->
+        <!--            "date" date NOT NULL,-->
+        <!--            description varchar(255) NOT NULL,-->
+        <!--            reason varchar(255) NOT NULL,-->
+        <!--            CONSTRAINT user_data_action_ref FOREIGN KEY (user_data_action_id) REFERENCES user_action(id),-->
+        <!--            CONSTRAINT user_history_ref FOREIGN KEY (user_id) REFERENCES "user"(id)-->
+        <!--            );-->
+
+        <!--            CREATE TABLE vote (-->
+        <!--            user_id varchar(10) NOT NULL,-->
+        <!--            restaurant_id varchar(10) NOT NULL,-->
+        <!--            "date" date NOT NULL,-->
+        <!--            created_user varchar(10) NULL,-->
+        <!--            created_date date NULL,-->
+        <!--            updated_user varchar(10) NULL,-->
+        <!--            updated_date date NULL,-->
+        <!--            record_version int4 NULL,-->
+        <!--            CONSTRAINT vote_pkey PRIMARY KEY (user_id, restaurant_id, date),-->
+        <!--            CONSTRAINT restaurant_ref FOREIGN KEY (restaurant_id) REFERENCES restaurant(id),-->
+        <!--            CONSTRAINT user_ref FOREIGN KEY (user_id) REFERENCES "user"(id)-->
+        <!--            );-->
+
+        <!--            CREATE TABLE vote_history (-->
+        <!--            user_id varchar(10) NOT NULL,-->
+        <!--            restaurant_id varchar(10) NOT NULL,-->
+        <!--            vote_date date NOT NULL,-->
+        <!--            vote_data_action_id varchar(10) NOT NULL,-->
+        <!--            "date" date NOT NULL,-->
+        <!--            description varchar(255) NOT NULL,-->
+        <!--            reason varchar(255) NOT NULL,-->
+        <!--            CONSTRAINT vote_history_action_ref FOREIGN KEY (vote_data_action_id) REFERENCES vote_action(id),-->
+        <!--            CONSTRAINT vote_history_vote_ref FOREIGN KEY (user_id,restaurant_id,vote_date) REFERENCES vote(user_id,restaurant_id,"date")-->
+        <!--            );-->
+        <!--        </sql>-->
     </changeSet>
 </databaseChangeLog>

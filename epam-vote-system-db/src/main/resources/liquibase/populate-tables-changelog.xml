@@ -6,7 +6,88 @@
         xmlns:pro="http://www.liquibase.org/xml/ns/pro"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
-
+    <property name="now" value="clock_timestamp()" dbms="postgresql"/>
     <changeSet id="1" author="Dzianis Zatsiupa">
+        <insert tableName="restaurant">
+            <column name="id" type="varchar(10)" value="0000000001"/>
+            <column name="name" type="varchar(100)" value="rest 18"/>
+            <column name="address" type="varchar(100)" value="address 1"/>
+            <column name="places" type="integer" value="21"/>
+            <column name="created_user" type="varchar(10)" value="user__1"/>
+            <column name="created_date" type="date" valueDate="${now}"/>
+        </insert>
+        <insert tableName="restaurant">
+            <column name="id" type="varchar(10)" value="0000000002"/>
+            <column name="name" type="varchar(100)" value="rest 11"/>
+            <column name="address" type="varchar(100)" value="address 1"/>
+            <column name="places" type="integer" value="21"/>
+            <column name="created_user" type="varchar(10)" value="user__1"/>
+            <column name="created_date" type="date" valueDate="${now}"/>
+        </insert>
+        <insert tableName="restaurant">
+            <column name="id" type="varchar(10)" value="0000000003"/>
+            <column name="name" type="varchar(100)" value="rest 7"/>
+            <column name="address" type="varchar(100)" value="address 1"/>
+            <column name="places" type="integer" value="21"/>
+            <column name="created_user" type="varchar(10)" value="user__1"/>
+            <column name="created_date" type="date" valueDate="${now}"/>
+        </insert>
+        <insert tableName="restaurant">
+            <column name="id" type="varchar(10)" value="0000000004"/>
+            <column name="name" type="varchar(100)" value="rest 5"/>
+            <column name="address" type="varchar(100)" value="address 1"/>
+            <column name="places" type="integer" value="21"/>
+            <column name="created_user" type="varchar(10)" value="user__1"/>
+            <column name="created_date" type="date" valueDate="${now}"/>
+        </insert>
+        <insert tableName="meal">
+            <column name="id" type="varchar(10)" value="0000000001"/>
+            <column name="name" type="varchar(100)" value="soup"/>
+            <column name="size" type="varchar(25)" value="small"/>
+            <column name="created_user" type="varchar(10)" value="user__1"/>
+            <column name="created_date" type="date" valueDate="${now}"/>
+        </insert>
+        <insert tableName="meal">
+            <column name="id" type="varchar(10)" value="0000000002"/>
+            <column name="name" type="varchar(100)" value="soup"/>
+            <column name="size" type="varchar(25)" value="normal"/>
+            <column name="created_user" type="varchar(10)" value="user__1"/>
+            <column name="created_date" type="date" valueDate="${now}"/>
+        </insert>
+        <insert tableName="meal">
+            <column name="id" type="varchar(10)" value="0000000003"/>
+            <column name="name" type="varchar(100)" value="soup"/>
+            <column name="size" type="varchar(25)" value="home"/>
+            <column name="created_user" type="varchar(10)" value="user__1"/>
+            <column name="created_date" type="date" valueDate="${now}"/>
+        </insert>
+        <insert tableName="meal">
+            <column name="id" type="varchar(10)" value="0000000004"/>
+            <column name="name" type="varchar(100)" value="soup"/>
+            <column name="size" type="varchar(25)" value="large"/>
+            <column name="created_user" type="varchar(10)" value="user__1"/>
+            <column name="created_date" type="date" valueDate="${now}"/>
+        </insert>
+        <insert tableName="restaurant_to_meal_map">
+            <column name="restaurant_id" type="varchar(10)" value="0000000001"/>
+            <column name="meal_id" type="varchar(10)" value="0000000001"/>
+            <column name="cost" type="decimal" value="6"/>
+            <column name="created_user" type="varchar(10)" value="user__1"/>
+            <column name="created_date" type="date" valueDate="${now}"/>
+        </insert>
+        <insert tableName="restaurant_to_meal_map">
+            <column name="restaurant_id" type="varchar(10)" value="0000000001"/>
+            <column name="meal_id" type="varchar(10)" value="0000000002"/>
+            <column name="cost" type="decimal" value="9"/>
+            <column name="created_user" type="varchar(10)" value="user__1"/>
+            <column name="created_date" type="date" valueDate="${now}"/>
+        </insert>
+        <insert tableName="restaurant_to_meal_map">
+            <column name="restaurant_id" type="varchar(10)" value="0000000001"/>
+            <column name="meal_id" type="varchar(10)" value="0000000003"/>
+            <column name="cost" type="decimal" value="10"/>
+            <column name="created_user" type="varchar(10)" value="user__1"/>
+            <column name="created_date" type="date" valueDate="${now}"/>
+        </insert>
     </changeSet>
 </databaseChangeLog>

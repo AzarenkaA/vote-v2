@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.epam.vote.repository.IRestaurantMapper">
+    <resultMap id="restaurantResultMap" type="com.epam.vote.domain.Restaurant">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="address" column="address"/>
+        <result property="places" column="places"/>
+    </resultMap>
+    <select id="getRestaurantById" resultMap="restaurantResultMap" parameterType="java.lang.String">
+        SELECT * FROM restaurant WHERE id='${id}';
+    </select>
+    <select id="getAllRestaurants" resultMap="restaurantResultMap" >
+        SELECT * FROM restaurant;
+    </select>
+</mapper>
