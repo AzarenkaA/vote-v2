@@ -1,6 +1,6 @@
 package com.epam.vote.controller;
 
-import com.epam.vote.repository.IRestaurantDao;
+import com.epam.vote.service.RestaurantService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,10 +22,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class RestaurantController {
 
     @Autowired
-    private IRestaurantDao restaurantDao;
+    private RestaurantService restaurantService;
 
-    public void setRestaurantDao(IRestaurantDao restaurantDao) {
-        this.restaurantDao = restaurantDao;
+    public void setRestaurantService(RestaurantService restaurantService) {
+        this.restaurantService = restaurantService;
     }
 
     @GetMapping(value =  "/restaurants", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -33,7 +33,7 @@ public class RestaurantController {
         ObjectMapper mapper = new ObjectMapper();
 
        try{
-           return mapper.writeValueAsString(restaurantDao.getAll());
+           return mapper.writeValueAsString(restaurantService.getAll());
        } catch (JsonProcessingException e) {
            throw new RuntimeException(e);
        }
@@ -43,7 +43,7 @@ public class RestaurantController {
         ObjectMapper mapper = new ObjectMapper();
 
         try{
-            return mapper.writeValueAsString(restaurantDao.getById(id));
+            return mapper.writeValueAsString(restaurantService.getById(id));
         } catch (JsonProcessingException e) {
             throw new RuntimeException(e);
         }
